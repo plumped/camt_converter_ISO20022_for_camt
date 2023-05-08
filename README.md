@@ -2,6 +2,9 @@ For firefly-iii/data-importer (https://github.com/firefly-iii/data-importer) sup
 
 In a further step the direct connection to firefly-iii will be provided per interface or api
 
+![image](https://user-images.githubusercontent.com/41291962/236948744-b242931e-1923-4292-9b08-d4dcd9d4b593.png)
+
+
 Docker install: Find image on https://hub.docker.com/r/plumpedboots/camt_converter
 
     docker pull plumpedboots/camt_converter:latest
