@@ -1,0 +1,17 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+    <h1>Generated files</h1>
+
+    <h4>The following files have been generated:</h4>
+
+    <ul class="itemlist">
+        {% for item in items %}
+            <li class="itemlist">{{ item }}.csv</li>
+        {% endfor %}
+    </ul>
+
+    <form class="input" method="POST" action="" enctype="multipart/form-data">
+        <input id="download-button" class="btn btn-success" type="submit" value="Download archive">
+    </form>
+{% endblock %}

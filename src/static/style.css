@@ -1,0 +1,96 @@
+html {
+    margin: 25px
+    width: 100%;
+    height: 100%;
+}
+
+body {
+
+}
+
+h1 {
+    margin-bottom: 25px;
+}
+
+h4 {
+    margin-bottom: 0;
+}
+
+p {
+    margin: 0;
+}
+
+ul.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.itemlist {
+    margin-top: 20px;
+    margin-bottom: 0;
+    list-style-type: circle;
+    display: block;
+}
+
+ul.navbar {
+list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  display: block ruby;
+}
+
+ul.flashes {
+    background-color: white;
+    color: red;
+}
+
+li.navbar a {
+  display: flex;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#para {
+    color: white;
+    padding: 14px 16px;
+    float:right;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 6px;
+}
+
+/* Change the link color to #111 (black) on hover */
+li.navbar a:hover {
+  background-color: #111;
+}
+
+li.flashes {
+    margin-top: 10px;
+    margin-left: 13px;
+}
+
+.container {
+    margin:25px;
+}
+
+.button {
+    margin-top: 25px;
+}
+
+#download-button {
+    margin-top: 20px;
+
+}
+
+
+
+
+
+
