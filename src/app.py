@@ -23,6 +23,10 @@ def index():
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 @app.route('/uploaded', methods=['GET', 'POST'])
 def uploaded():
     items = xmlparser.filelist

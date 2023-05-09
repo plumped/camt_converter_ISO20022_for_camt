@@ -1,11 +1,14 @@
 {% extends "layouts/main.html" %}
 
 {% block content %}
-        <h1>CAMT Converter</h1>
-
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">CAMT Converter</h1>
         <form class="input" method="POST" action="" enctype="multipart/form-data">
             <input class="btn btn-light" id="upload" type="file" name="file">
-            <input class="btn btn-success" type="submit" value="Convert">
+            <input class="btn btn-outline-success" type="submit" value="Convert">
         </form>
+  </div>
+</div>
 
 {% endblock %}

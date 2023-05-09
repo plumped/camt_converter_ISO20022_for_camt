@@ -13,11 +13,16 @@ h1 {
 }
 
 h4 {
-    margin-bottom: 0;
+    margin-top: 3rem;
+    margin-bottom: 0.5rem;
 }
 
 p {
     margin: 0;
+}
+
+.input {
+    margin-top: 1rem;
 }
 
 ul.nav {
@@ -26,6 +31,14 @@ ul.nav {
   padding: 0;
   overflow: hidden;
   background-color: #333;
+}
+
+ul.list,
+ol.list {
+    margin-top: 0.5rem;
+}
+ul.list p {
+    margin-top: 0.8rem;
 }
 
 ul.itemlist {
@@ -76,18 +89,31 @@ li.flashes {
     margin-left: 13px;
 }
 
-.container {
-    margin:25px;
-}
-
 .button {
     margin-top: 25px;
 }
 
-#download-button {
-    margin-top: 20px;
-
+.container {
+    margin-top: 1rem;
+    margin-left: 1rem;
 }
+
+.source {
+    margin-top: 4rem;
+}
+
+#download-button {
+    margin-top: 1rem;
+}
+
+#import-button {
+    margin-top: 1rem;
+}
+
+#upload {
+    margin-left: -12px
+}
+
 
 
 
