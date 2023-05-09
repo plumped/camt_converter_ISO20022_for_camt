@@ -17,6 +17,7 @@ mylist = []
 def createcsv(headers, ibanlists):
     for iban in ibanList:
         with open('./downloads/' + iban + ".csv", 'w', newline='', encoding='utf-8') as f:
+            filelist.clear()
             filelist.append(iban)
             writer = csv.writer(f)
             writer.writerow(headers)
@@ -85,5 +86,7 @@ def xml_parsing():  # parse input xmls, find all entries, tags and ibans. sort t
         createcsv(alltags, ibanList)
     makearchive()
 
+
+xml_parsing()
 
 # AKTUELL 08.05.2023 20:18
