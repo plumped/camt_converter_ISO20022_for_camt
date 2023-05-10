@@ -1,28 +1,27 @@
 html {
-    margin: 25px
-    width: 100%;
-    height: 100%;
+  margin: 25px;
+  width: 100%;
+  height: 100%;
 }
 
 body {
-
 }
 
 h1 {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 h4 {
-    margin-top: 3rem;
-    margin-bottom: 0.5rem;
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
 }
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
 .input {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 ul.nav {
@@ -35,21 +34,22 @@ ul.nav {
 
 ul.list,
 ol.list {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
+
 ul.list p {
-    margin-top: 0.8rem;
+  margin-top: 0.8rem;
 }
 
 ul.itemlist {
-    margin-top: 20px;
-    margin-bottom: 0;
-    list-style-type: circle;
-    display: block;
+  margin-top: 20px;
+  margin-bottom: 0;
+  list-style-type: circle;
+  display: block;
 }
 
 ul.navbar {
-list-style-type: none;
+  list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -58,8 +58,8 @@ list-style-type: none;
 }
 
 ul.flashes {
-    background-color: white;
-    color: red;
+  background-color: white;
+  color: red;
 }
 
 li.navbar a {
@@ -71,12 +71,12 @@ li.navbar a {
 }
 
 #para {
-    color: white;
-    padding: 14px 16px;
-    float:right;
-    text-align: center;
-    text-decoration: none;
-    margin-top: 6px;
+  color: white;
+  padding: 14px 16px;
+  float: right;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 6px;
 }
 
 /* Change the link color to #111 (black) on hover */
@@ -85,38 +85,31 @@ li.navbar a:hover {
 }
 
 li.flashes {
-    margin-top: 10px;
-    margin-left: 13px;
+  margin-top: 10px;
+  margin-left: 13px;
 }
 
 .button {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
 .container {
-    margin-top: 1rem;
-    margin-left: 1rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
 }
 
 .source {
-    margin-top: 4rem;
+  margin-top: 4rem;
 }
 
 #download-button {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 #import-button {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 #upload {
-    margin-left: -12px
+  margin-left: -12px;
 }
-
-
-
-
-
-
-

@@ -11,7 +11,7 @@
         {% endfor %}
     </ul>
 
-    <form class="input" method="POST" action="" enctype="multipart/form-data">
+    <form class="input" method="GET" action="{{ url_for('download_file', filename='csvperiban.zip') }}">
         <input id="download-button" class="btn btn-outline-success" type="submit" value="Download archive">
         <input id="import-button" class="btn btn-outline-danger" type="submit" value="Import to firefly-iii" disabled>
     </form>
