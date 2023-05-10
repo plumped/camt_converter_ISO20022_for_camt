@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+from collections import defaultdict
 import csv
 import zipfile
 import os
@@ -55,14 +56,14 @@ def getalltags():
 
                 # Get all tags from input file and save it to list
                 tags = [tag.name for tag in soup.find_all()]
-                for tag in tags:
+                for tag in sorted(tags):
                     if not tag in alltags:
                         alltags[tag] = ""
-
 
 def xml_parsing():  # parse input xmls, find all entries, tags and ibans. sort them and put in single directories
     # Import complete ZIP-Files
     path = './uploads/'
+    getalltags()
     for filename in glob.glob(os.path.join(path, '*.zip')):
         with zipfile.ZipFile(os.path.join(os.getcwd(), filename), 'r') as zf:
             for name in zf.namelist():
@@ -71,9 +72,7 @@ def xml_parsing():  # parse input xmls, find all entries, tags and ibans. sort t
                 x = iban.text
                 ibanList.setdefault(x, [])
                 dictibanentries.update({x: ""})
-                getalltags()
                 b_ntry = soup.find_all('Ntry')
-
                 for ntry in b_ntry:
                     tagEntries = {}
                     for tag in alltags:
@@ -84,9 +83,9 @@ def xml_parsing():  # parse input xmls, find all entries, tags and ibans. sort t
                             tagEntries[tag.title()] = ""
                     ibanList[x] += [tagEntries]
         createcsv(alltags, ibanList)
-    makearchive()
+    # makearchive()
 
 
 xml_parsing()
-
+print(alltags)
 # AKTUELL 08.05.2023 20:18
