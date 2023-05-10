@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">About</h1>
+      <div class="container-two">
+        <h4>What is this tool about?</h4>
+          <p>This tool serves the purpose of converting the bank to customer statements (CAMT.053) commonly used in the SEPA area into csv formats. The following steps are performed for the conversion:</p>
+            <div class="listing">
+                <ol class="list">
+                    <li>The ZIP file is analyzed after the upload and all "Ntrys" are read out per file.</li>
+                    <li>The entries are then sorted by the respective IBAN number</li>
+                    <li>All reports in the loaded zipfile will be assigned to the corresponding IBAN</li>
+                    <li>For each IBAN a csv file is generated, which contains all entries of the IBAN.</li>
+                    <li>A new ZIP file is generated which contains all csv files and is made available for download.</li>
+                </ol>
+            </div>
+      </div>
+      <div class="container-two">
+        <h4>What is a CAMT.053?</h4>
+          <p> camt.053 is a message type according to ISO 20022 and belongs to the category statements and notifications (notifications and reporting)</p>
+        <ul class="list">
+            <li>CAMT.053 is a Bank to Customer Statement, essentially providing you with a prior or previous day statement of your account</li>
+            <li>CAMT.053 will indicate all entries booked to the account for the previous business day</li>
+            <li>CAMT.053 is an updated and standardised version of the <a href="https://www.sepaforcorporates.com/swift-for-corporates/account-statement-mt940-file-format-overview/">MT940</a> and prior-day <a href="https://www.sepaforcorporates.com/swift-for-corporates/bai2-format-specification/">BAI2</a> bank statement formats</li>
+        </ul>
+      </div>
+      <div class="container-two">
+        <h4>About ISO 20022 - Universal financial industry message scheme</h4>
+        <p>ISO 20022 is a multipart International Standard prepared by ISO Technical Committee TC68 Financial Services</p>
+      </div>
+      <p class="source">Source: <q>https://www.sepaforcorporates.com/</q></p>
+  </div>
+</div>
+
+
+{% endblock %}
