@@ -19,9 +19,7 @@ ibanList = defaultdict(list)
 
 def create_csv(headers):
     # Iterate over all IBANs and their entries
-    print("CREATECSV")
     for iban, entries in ibanList.items():
-        print(iban)
         # Create a CSV file with the name of the IBAN
         allFiles.append(iban)
         with open(f'./downloads/{iban}.csv', 'w', newline='', encoding='utf-8') as f:
@@ -62,7 +60,6 @@ def make_archive():
     # Recreate the uploads and downloads folders
     os.makedirs('./uploads')
     os.makedirs('./downloads')
-    print("-------------------------------------")
 
 
 def get_all_tags():
