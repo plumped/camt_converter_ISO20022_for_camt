@@ -5,9 +5,19 @@ import zipfile
 import os
 import glob
 import shutil
+import json
 
-# A dictionary to store all the tags found in the input files
-alltags = {}
+# Load camt tags
+with open('static/camt053_Tags.json', 'r') as file:
+    data = json.load(file)
+
+allTags = {}
+
+for item in data['tags']:
+    for key, value in item.items():
+        allTags[key] = value
+
+allTags = dict(sorted(allTags.items()))
 
 allFiles = []
 
@@ -62,33 +72,10 @@ def make_archive():
     os.makedirs('./downloads')
 
 
-def get_all_tags():
-    # set the path of the upload directory
-    path = './uploads/'
-    # set an empty set to store the tags that are already seen
-    seen_tags = set()
-    # loop over each .zip file in the upload directory
-    for filename in glob.glob(os.path.join(path, '*.zip')):
-        # read the content of the .zip file
-        with zipfile.ZipFile(os.path.join(os.getcwd(), filename), 'r') as zf:
-            # loop over each file in the .zip archive
-            for name in zf.namelist():
-                # parse the XML file with BeautifulSoup
-                soup = BeautifulSoup(zf.open(name), 'xml')
-                # find all the tags in the XML file
-                tags = [tag.name for tag in soup.find_all()]
-                # add new tags to the dictionary of all tags
-                for tag in sorted(tags):
-                    if tag not in seen_tags:
-                        alltags[tag] = ''
-                        seen_tags.add(tag)
-
-
 def parse_xml_files():
     # set path and get all tags
     clear_iban_list()
     path = './uploads/'
-    get_all_tags()
     # iterate through zip files in uploads directory
     for filename in glob.glob(os.path.join(path, '*.zip')):
         with zipfile.ZipFile(os.path.join(os.getcwd(), filename), 'r') as zf:
@@ -102,7 +89,7 @@ def parse_xml_files():
                 for ntry in b_ntry:
                     tag_entries = {}
                     # iterate through all tags and find matching entries in xml file
-                    for tag in alltags:
+                    for tag in allTags:
                         a = ntry.find(tag)
                         if tag == 'Cdtr':
                             tag_entries[tag.title()] = a.find('Nm').text if a and a.find('Nm') else ''
@@ -112,5 +99,5 @@ def parse_xml_files():
                             tag_entries[tag.title()] = a.text if a else ''
                     ibanList[x].append(tag_entries)
             zf.close()
-        create_csv(alltags)
+        create_csv(allTags)
     make_archive()
